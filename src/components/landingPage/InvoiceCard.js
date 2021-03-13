@@ -13,8 +13,6 @@ function InvoiceCard() {
   );
 }
 
-export default InvoiceCard;
-
 const Card = styled.div`
   display: flex;
   justify-content: space-around;
@@ -40,3 +38,5 @@ const Card = styled.div`
     }
   }
 `;
+
+export default InvoiceCard;

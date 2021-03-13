@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 function Header() {
@@ -17,13 +18,13 @@ function Header() {
             <option value="yes">Pending</option>
           </select>
         </div>
-        <div className="new-invoice"> New Invoice</div>
+        <Link to="/createinvoice">
+          <div className="new-invoice">New Invoice</div>
+        </Link>
       </div>
     </Heading>
   );
 }
-
-export default Header;
 
 const Heading = styled.header`
   display: flex;
@@ -65,6 +66,7 @@ const Heading = styled.header`
     border-radius: 1.6rem;
     background-color: #6a1b9a;
     text-align: center;
+    color: white;
 
     &:hover {
       cursor: pointer;
@@ -72,3 +74,5 @@ const Heading = styled.header`
     }
   }
 `;
+
+export default Header;
