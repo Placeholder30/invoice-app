@@ -3,16 +3,13 @@ import styled from "styled-components";
 import Header from "./Header";
 import InvoiceCard from "./InvoiceCard";
 
-function InvoicePage() {
+function InvoicePage({ input, submit, invoice }) {
   return (
     <Container>
       <Header />
-      <InvoiceCard />
-      <InvoiceCard />
-      <InvoiceCard />
-      <InvoiceCard />
-      <InvoiceCard />
-      <InvoiceCard />
+      {submit && (
+        <InvoiceCard input={input} submit={submit} invoice={invoice} />
+      )}
     </Container>
   );
 }

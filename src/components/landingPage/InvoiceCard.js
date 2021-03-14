@@ -1,15 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 
-function InvoiceCard() {
+function InvoiceCard({ invoice }) {
   return (
-    <Card>
-      <div className="invoice-id">#RT38$05</div>
-      <div className="due-date">18th August, 2021</div>
-      <div className="client">Adam Driver</div>
-      <div className="amount">$15,000.90</div>
-      <div className="payment-status">Paid</div>
-    </Card>
+    <>
+      {invoice.map(() => (
+        <Card>
+          <div className="invoice-id">#RT38$05</div>
+          <div className="due-date">18th August, 2021</div>
+          <div className="client">James bay</div>
+          <div className="amount">$15,000.90</div>
+          <div className="payment-status">Paid</div>
+        </Card>
+      ))}
+    </>
   );
 }
 
