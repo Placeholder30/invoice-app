@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
-function CreateInvoice({ input, setInput, setSubmit, setInvoice }) {
+function CreateInvoice({
+  input,
+  setInput,
+  setSubmit,
+  setInvoice,
+  setCreateInvoice,
+}) {
   return (
     <Container>
       <form>
@@ -239,6 +245,7 @@ function CreateInvoice({ input, setInput, setSubmit, setInvoice }) {
             if (Object.entries(input).length !== 0) {
               setInvoice((state) => [...state, input]);
               setSubmit(true);
+              setCreateInvoice(false);
             }
           }}
         >
@@ -251,17 +258,23 @@ function CreateInvoice({ input, setInput, setSubmit, setInvoice }) {
 }
 
 const Container = styled.div`
-  width: 70vw;
+  width: 50vw;
   color: white;
   margin: 3rem auto;
-
+  position: absolute;
+  top: 0;
+  left: 5rem;
+  z-index: 2;
+  form {
+    background-color: #222;
+  }
   label {
     display: block;
     font-size: 1.2rem;
   }
   input {
     display: block;
-    width: 50%;
+    width: 92%;
     color: white;
     padding: 0.6rem;
     background-color: #32325a;

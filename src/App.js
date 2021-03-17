@@ -8,21 +8,28 @@ function App() {
   const [input, setInput] = useState({});
   const [submit, setSubmit] = useState(false);
   const [invoice, setInvoice] = useState([]);
+  const [createInvoice, setCreateInvoice] = useState(false);
 
   return (
     <Wrapper>
       <Router>
         <Switch>
           <Route exact path="/">
-            <InvoicePage input={input} submit={submit} invoice={invoice} />
-          </Route>
-          <Route exact path="/createinvoice">
-            <CreateInvoice
-              setInvoice={setInvoice}
-              setInput={setInput}
+            <InvoicePage
               input={input}
-              setSubmit={setSubmit}
+              submit={submit}
+              invoice={invoice}
+              setCreateInvoice={setCreateInvoice}
             />
+            {createInvoice && (
+              <CreateInvoice
+                setInvoice={setInvoice}
+                setInput={setInput}
+                input={input}
+                setSubmit={setSubmit}
+                setCreateInvoice={setCreateInvoice}
+              />
+            )}
           </Route>
         </Switch>
       </Router>

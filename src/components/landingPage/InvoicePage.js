@@ -3,10 +3,10 @@ import styled from "styled-components";
 import Header from "./Header";
 import InvoiceCard from "./InvoiceCard";
 
-function InvoicePage({ input, submit, invoice }) {
+function InvoicePage({ input, submit, invoice, setCreateInvoice }) {
   return (
     <Container>
-      <Header />
+      <Header setCreateInvoice={setCreateInvoice} />
       {submit && (
         <InvoiceCard input={input} submit={submit} invoice={invoice} />
       )}

@@ -1,8 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-function Header() {
+function Header({ showInvoicePage, setCreateInvoice }) {
   return (
     <Heading>
       <div className="left">
@@ -18,9 +17,10 @@ function Header() {
             <option value="yes">Pending</option>
           </select>
         </div>
-        <Link to="/createinvoice">
-          <div className="new-invoice">New Invoice</div>
-        </Link>
+
+        <div className="new-invoice" onClick={() => setCreateInvoice(true)}>
+          New Invoice
+        </div>
       </div>
     </Heading>
   );
